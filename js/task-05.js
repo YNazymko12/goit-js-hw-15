@@ -3,7 +3,7 @@ const destroyButtonEl = document.querySelector('[data-destroy]')
 const inputEl = document.querySelector('input');
 const boxesEl = document.querySelector('#boxes');
 
-createButtonEl.addEventListener('click', createBoxes);
+createButtonEl.addEventListener('click', handleCreateButtonClick);
 destroyButtonEl.addEventListener('click', destroyBoxes);
 
 
@@ -13,8 +13,12 @@ function getRandomHexColor() {
       .padStart(6, 0)}`;
 }
 
-function createBoxes() {
+function handleCreateButtonClick() {
     const amount = +inputEl.value;
+    createBoxes(amount);
+}
+
+function createBoxes(amount) {
     destroyBoxes();
     const elements = [];
     let size = 30;

@@ -12,7 +12,9 @@ function handlerForm(event) {
     const { email, password } = loginFormEl.elements;
 
     if(checkFields(email.value, password.value)) {
-        alert('Усі поля повинні бути заповнені')
+        alert('Усі поля повинні бути заповнені');
+        return;
+        
     } else {
         const userLogin = {
             email: email.value,
